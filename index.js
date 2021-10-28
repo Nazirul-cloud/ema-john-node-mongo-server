@@ -25,7 +25,7 @@ async function run() {
         const productCollection = database.collection('products');
         const orderCollection = database.collection('orders');
 
-        //GET Products API
+        //GET Products API from database
         app.get('/products', async(req, res)=>{
             
             const cursor = productCollection.find({});
@@ -46,7 +46,7 @@ async function run() {
             });
         })
 
-        //Use POST to get data by keys
+        //Use POST to get data by Keys
         app.post ('/products/byKeys', async(req, res) =>{
             const keys = req.body;
             console.log(keys);
